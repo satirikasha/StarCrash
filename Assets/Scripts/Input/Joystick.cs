@@ -1,4 +1,4 @@
-namespace Input {
+namespace StarCrash.Input {
   using System;
   using UnityEngine;
   using UnityEngine.EventSystems;
@@ -20,6 +20,7 @@ namespace Input {
 
     private void UpdateVirtualAxes(Vector2 value) {
       var delta = m_StartPos - value;
+      delta = -delta;
       delta /= MovementRange;
       OnPositionChanged(delta);
     }
