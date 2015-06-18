@@ -2,7 +2,7 @@
   using UnityEngine;
   using Engine.Utils;
 
-  public abstract class Weapon: MonoBehaviour {
+  public abstract class Weapon: MonoBehaviour, IHasParent<Ship> {
 
     public float CoolDown;
     public Shot Shot;
@@ -10,6 +10,12 @@
 
     protected bool Rearmed;
     protected Clip Clip;
+
+    public Ship Parent { get; private set; }
+
+    public void SetParent(Ship parent) {
+      Parent = parent;
+    }
 
     void Start() {
       Rearmed = true;
@@ -24,5 +30,7 @@
       StartCoroutine(Utils.DelayedAction(_ => Rearmed = true, time : CoolDown));
       Clip.GetNextShot().Launch();
     }
+
+    
   }
 }
