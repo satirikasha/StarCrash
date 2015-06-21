@@ -32,7 +32,7 @@ namespace Engine.Utils {
     private static void AddLog(LogRecord record) {
       if(_Current != null) {
         _Current.RecordQueue.Enqueue(record);
-        if(_Current.RecordQueue.Count > _Capacity)
+        if(_Current.RecordQueue.Count > _Current._Capacity)
           _Current.RecordQueue.Dequeue();
       }
     }
