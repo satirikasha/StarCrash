@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Engine.Utils;
 
 namespace UltimateFracturing
 {
@@ -119,7 +120,7 @@ namespace UltimateFracturing
 
             if(planeSplit.Raycast(rayAB, out fRayCast) == false)
             {
-                Debug.LogWarning("Raycast returned false");
+              DebugConsole.LogWarning("Raycast returned false");
                 clippedVertexDataOut = new VertexData(clippedVertexDataOut.nVertexHash);
                 return false;
             };

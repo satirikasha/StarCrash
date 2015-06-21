@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+using Engine.Utils;
 
 [CustomEditor(typeof(CombinedMesh))]
 public class CombinedMeshEditor : Editor
@@ -95,7 +96,7 @@ public class CombinedMeshEditor : Editor
             }
             catch(System.Exception e)
             {
-                Debug.LogError("Exception Type: " + e.GetType().ToString() + ". Message: " + e.Message.ToString() + ". Stack Trace: " + e.StackTrace.ToString());
+              DebugConsole.LogError("Exception Type: " + e.GetType().ToString() + ". Message: " + e.Message.ToString() + ". Stack Trace: " + e.StackTrace.ToString());
             }
 
             EditorUtility.ClearProgressBar();

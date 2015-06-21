@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Engine.Utils;
 
 namespace UltimateFracturing {
   public static partial class Fracturer {
@@ -606,7 +607,7 @@ namespace UltimateFracturing {
 
       if(IsFracturingCancelled() == false) {
         if(fracturedComponent.Verbose) {
-          Debug.Log(string.Format("Computed {0} slices for {1} chunks (Average: {2}).", s_FracturingStats.nSplitCount, listMeshDataOut.Count, (float)s_FracturingStats.nSplitCount / (float)listMeshDataOut.Count));
+          DebugConsole.Log(string.Format("Computed {0} slices for {1} chunks (Average: {2}).", s_FracturingStats.nSplitCount, listMeshDataOut.Count, (float)s_FracturingStats.nSplitCount / (float)listMeshDataOut.Count));
         }
 
         if(listMeshDataOut.Count > 0) {
@@ -1012,7 +1013,7 @@ namespace UltimateFracturing {
       }
 
       if(fracturedComponent.Verbose && fracturedComponent.ListFracturedChunks.Count > 0) {
-        Debug.Log("Total collider triangles: " + nTotalFaces + ". Average = " + (nTotalFaces / fracturedComponent.ListFracturedChunks.Count));
+        DebugConsole.Log("Total collider triangles: " + nTotalFaces + ". Average = " + (nTotalFaces / fracturedComponent.ListFracturedChunks.Count));
       }
     }
 

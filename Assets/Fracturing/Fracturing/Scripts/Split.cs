@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Engine.Utils;
 
 namespace UltimateFracturing
 {
@@ -1832,7 +1833,7 @@ namespace UltimateFracturing
                 }
                 else
                 {
-                    if(fracturedComponent.Verbose) Debug.LogWarning("Error resolving cap");
+                  if(fracturedComponent.Verbose) DebugConsole.LogWarning("Error resolving cap");
                 }
             }
 

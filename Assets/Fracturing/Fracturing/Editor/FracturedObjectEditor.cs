@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+using Engine.Utils;
 
 [CustomEditor(typeof(FracturedObject))]
 public class FracturedObjectEditor: Editor {
@@ -676,7 +677,7 @@ public class FracturedObjectEditor: Editor {
           UltimateFracturing.Fracturer.FractureToChunks(fracturedComponent, bPositionOnSourceAndHideOriginal, out listGameObjects, Progress);
         }
         catch(System.Exception e) {
-          Debug.LogError(string.Format("Exception computing chunks ({0}):\n{1}", e.Message, e.StackTrace));
+          DebugConsole.LogError(string.Format("Exception computing chunks ({0}):\n{1}", e.Message, e.StackTrace));
           bError = true;
         }
 
@@ -686,7 +687,7 @@ public class FracturedObjectEditor: Editor {
 
         if(bError == false && m_bProgressCancelled == false) {
           if(fracturedComponent.Verbose) {
-            Debug.Log("Compute time = " + (fEndTime - fStartTime) + "seconds");
+            DebugConsole.Log("Compute time = " + (fEndTime - fStartTime) + "seconds");
           }
         }
 

@@ -1,6 +1,7 @@
 ﻿namespace StarCrash.Enviroment {
   using UnityEngine;
   using System.Collections;
+  using Engine.Utils;
 
   public class Enviroment: MonoBehaviour {
 
@@ -13,7 +14,7 @@
 
     void Awake() {
       if(_Current != null) {
-        Debug.LogError("Only one enviroment item can exist in the scene");
+        DebugConsole.LogError("Only one enviroment item can exist in the scene");
       }
       else {
         _Current = this;

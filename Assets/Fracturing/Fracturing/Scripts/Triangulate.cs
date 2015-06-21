@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Engine.Utils;
 
 namespace UltimateFracturing
 {
@@ -156,7 +157,7 @@ namespace UltimateFracturing
                 }
                 catch(System.Exception e)
                 {
-                    if(fracturedComponent.Verbose) Debug.LogWarning("Exception (" + e.GetType() + ") using hole triangulation (holes = " + listlistCapPolygonPoints.Count + "). Trying to use constrained delaunay.");
+                  if(fracturedComponent.Verbose) DebugConsole.LogWarning("Exception (" + e.GetType() + ") using hole triangulation (holes = " + listlistCapPolygonPoints.Count + "). Trying to use constrained delaunay.");
                     bTriangulatedWithHoles = false;
                 }
             }
@@ -199,7 +200,7 @@ namespace UltimateFracturing
                         }
                         catch(System.Exception e)
                         {
-                            if(fracturedComponent.Verbose) Debug.LogWarning("Exception (" + e.GetType() + ") using vertex soup triangulation.");
+                          if(fracturedComponent.Verbose) DebugConsole.LogWarning("Exception (" + e.GetType() + ") using vertex soup triangulation.");
                         }
                     }
                 }
@@ -226,7 +227,7 @@ namespace UltimateFracturing
                         }
                         catch(System.Exception e)
                         {
-                            if(fracturedComponent.Verbose) Debug.LogWarning("Exception (" + e.GetType() + ") using polygon triangulation of cap polygon " + nPoly + ". Trying to use non constrained");
+                          if(fracturedComponent.Verbose) DebugConsole.LogWarning("Exception (" + e.GetType() + ") using polygon triangulation of cap polygon " + nPoly + ". Trying to use non constrained");
                             listTriangles = null;
                         }
 
@@ -250,7 +251,7 @@ namespace UltimateFracturing
                             }
                             catch(System.Exception e)
                             {
-                                if(fracturedComponent.Verbose) Debug.LogWarning("Exception (" + e.GetType() + ") using non constrained triangulation of cap polygon " + nPoly + ". Skipping");
+                              if(fracturedComponent.Verbose) DebugConsole.LogWarning("Exception (" + e.GetType() + ") using non constrained triangulation of cap polygon " + nPoly + ". Skipping");
                             }
                         }
 
@@ -480,7 +481,7 @@ namespace UltimateFracturing
         {
 	        if(dicCapEdges.Count < 3)
 	        {
-                if(fracturedComponent.Verbose) Debug.LogWarning("Cap has < 3 segments");
+            if(fracturedComponent.Verbose) DebugConsole.LogWarning("Cap has < 3 segments");
 		        return false;
 	        }
 
@@ -581,7 +582,7 @@ namespace UltimateFracturing
                     }
                     else
                     {
-                        if(fracturedComponent.Verbose) Debug.LogWarning("Cap group has less than 3 vertices (" + newListVertices.Count + ")");
+                      if(fracturedComponent.Verbose) DebugConsole.LogWarning("Cap group has less than 3 vertices (" + newListVertices.Count + ")");
                     }
 
                     if(listUnresolvedCap.Count > 0)
@@ -601,7 +602,7 @@ namespace UltimateFracturing
 
 	        if(listUnresolvedCap.Count > 0)
 	        {
-                if(fracturedComponent.Verbose) Debug.LogWarning(string.Format("Cap has {0}/{1} unresolved segments left", listUnresolvedCap.Count, nTotalSegments));
+            if(fracturedComponent.Verbose) DebugConsole.LogWarning(string.Format("Cap has {0}/{1} unresolved segments left", listUnresolvedCap.Count, nTotalSegments));
 	        }
 
 	        return true;

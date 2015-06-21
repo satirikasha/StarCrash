@@ -19,13 +19,13 @@ namespace Engine.Utils {
         _Current = obj;
         obj.m_FpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
         obj.m_GuiText = obj.GetComponent<GUIText>();
-        obj.m_GuiText.anchor = TextAnchor.UpperRight;
-        obj.transform.position = new Vector3(1f, 1f, 0f);
+        obj.m_GuiText.anchor = TextAnchor.UpperCenter;
+        obj.transform.position = new Vector3(0.5f, 1f, 0f);
         DontDestroyOnLoad(obj.gameObject);
       }
     }
 
-    private void Update() {
+    void Update() {
       // measure average frames per second
       m_FpsAccumulator++;
       if(Time.realtimeSinceStartup > m_FpsNextPeriod) {

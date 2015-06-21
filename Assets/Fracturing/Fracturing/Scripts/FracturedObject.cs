@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UltimateFracturing;
+using Engine.Utils;
 
 [ExecuteInEditMode]
 public class FracturedObject: MonoBehaviour {
@@ -291,7 +292,7 @@ public class FracturedObject: MonoBehaviour {
     foreach(FracturedChunk chunk in ListFracturedChunks) {
       if(chunk == null) {
 #if UNITY_EDITOR
-        Debug.LogWarning("ResetChunks() call invalid: some chunks have already been deleted. Ignoring...");
+        DebugConsole.LogWarning("ResetChunks() call invalid: some chunks have already been deleted. Ignoring...");
 #endif
         return false;
       }
