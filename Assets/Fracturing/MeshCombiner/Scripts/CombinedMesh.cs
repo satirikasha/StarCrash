@@ -203,7 +203,7 @@ public class CombinedMesh : MonoBehaviour
 
             if(meshFilter.GetComponent<Renderer>() == null)
             {
-              DebugConsole.LogWarning(meshFilter.name + " has no mesh renderer available");
+              Debug.LogWarning(meshFilter.name + " has no mesh renderer available");
                 continue;
             }
 
@@ -360,7 +360,7 @@ public class CombinedMesh : MonoBehaviour
 
                             if(bCreateNormals)
                             {
-                              DebugConsole.LogWarning(string.Format("Object {0} has mesh with no vertex normals, and some other objects have them. Dummy normals have been added", materialMeshInfo.transform.name));
+                              Debug.LogWarning(string.Format("Object {0} has mesh with no vertex normals, and some other objects have them. Dummy normals have been added", materialMeshInfo.transform.name));
                             }
 
                             Vector3[] av3Normals = bCreateNormals ? new Vector3[nVertexCount] : materialMeshInfo.mesh.normals;
@@ -381,7 +381,7 @@ public class CombinedMesh : MonoBehaviour
 
                             if(bCreateTangents)
                             {
-                              DebugConsole.LogWarning(string.Format("Object {0} has mesh with no vertex tangents, and some other objects have them. Dummy tangents have been added", materialMeshInfo.transform.name));
+                              Debug.LogWarning(string.Format("Object {0} has mesh with no vertex tangents, and some other objects have them. Dummy tangents have been added", materialMeshInfo.transform.name));
                             }
 
                             Vector4[] av4Tangents = bCreateTangents ? new Vector4[nVertexCount] : materialMeshInfo.mesh.tangents;
@@ -408,7 +408,7 @@ public class CombinedMesh : MonoBehaviour
 
                             if(bCreateColors)
                             {
-                              DebugConsole.LogWarning(string.Format("Object {0} has mesh with no vertex colors, and some other objects have them. Dummy colors have been added", materialMeshInfo.transform.name));
+                              Debug.LogWarning(string.Format("Object {0} has mesh with no vertex colors, and some other objects have them. Dummy colors have been added", materialMeshInfo.transform.name));
                             }
 
                             Color32[] aColors32 = null;
@@ -442,7 +442,7 @@ public class CombinedMesh : MonoBehaviour
 
                             if(bCreateMapping1)
                             {
-                              DebugConsole.LogWarning(string.Format("Object {0} has mesh with no vertex mapping (uv), and some other objects have them. Dummy mapping has been added", materialMeshInfo.transform.name));
+                              Debug.LogWarning(string.Format("Object {0} has mesh with no vertex mapping (uv), and some other objects have them. Dummy mapping has been added", materialMeshInfo.transform.name));
                             }
 
                             Vector2[] av2Mapping1 = bCreateMapping1 ? new Vector2[nVertexCount] : materialMeshInfo.mesh.uv;
@@ -457,7 +457,7 @@ public class CombinedMesh : MonoBehaviour
 
                             if(bCreateMapping2)
                             {
-                              DebugConsole.LogWarning(string.Format("Object {0} has mesh with no vertex mapping (uv2), and some other objects have them. Dummy mapping has been added", materialMeshInfo.transform.name));
+                              Debug.LogWarning(string.Format("Object {0} has mesh with no vertex mapping (uv2), and some other objects have them. Dummy mapping has been added", materialMeshInfo.transform.name));
                             }
 
                             Vector2[] av2Mapping2 = bCreateMapping2 ? new Vector2[nVertexCount] : materialMeshInfo.mesh.uv2;
@@ -514,7 +514,7 @@ public class CombinedMesh : MonoBehaviour
 
                 if(listVertices.Count > nVertexLimit)
                 {
-                  DebugConsole.LogWarning("Warning! vertex count = " + listVertices.Count + ". You may be hitting Unity's vertex count limit (" + nVertexLimit + "). Please try combining less objects.");
+                  Debug.LogWarning("Warning! vertex count = " + listVertices.Count + ". You may be hitting Unity's vertex count limit (" + nVertexLimit + "). Please try combining less objects.");
                 }
 
                 Mesh newMesh = new Mesh();
@@ -549,7 +549,7 @@ public class CombinedMesh : MonoBehaviour
         }
         else
         {
-          DebugConsole.LogWarning("No meshes were combined because none were found.");
+          Debug.LogWarning("No meshes were combined because none were found.");
         }
     }
 }

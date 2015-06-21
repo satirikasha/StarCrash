@@ -63,12 +63,12 @@ namespace UltimateFracturing {
         if(fracturedObject.ConcaveColliderAlgorithm == FracturedObject.ECCAlgorithm.Fast) {
           // Fast failed. Try with normal.
           if(fracturedObject.Verbose) {
-            DebugConsole.Log(gameObject.name + ": Falling back to normal convex decomposition algorithm");
+            Debug.Log(gameObject.name + ": Falling back to normal convex decomposition algorithm");
           }
 
           if(ComputeHull(gameObject, FracturedObject.ECCAlgorithm.Normal, fracturedObject.ConcaveColliderMaxHulls, fracturedObject.ConcaveColliderMaxHullVertices, fracturedObject.ConcaveColliderLegacySteps, fracturedObject.Verbose, out nTotalTriangles) == false) {
             if(fracturedObject.Verbose) {
-              DebugConsole.Log(gameObject.name + ": Falling back to box collider");
+              Debug.Log(gameObject.name + ": Falling back to box collider");
             }
           }
         }
@@ -139,18 +139,18 @@ namespace UltimateFracturing {
               }
               else {
                 if(bVerbose) {
-                  DebugConsole.LogWarning(gameObject.name + ": Error generating collider. ComputeHull() returned 0 triangles.");
+                  Debug.LogWarning(gameObject.name + ": Error generating collider. ComputeHull() returned 0 triangles.");
                 }
               }
             }
 
             if(info.nHullsOut < 0 && bVerbose) {
-              DebugConsole.LogWarning(gameObject.name + ": Error generating collider. ComputeHull() returned no hulls.");
+              Debug.LogWarning(gameObject.name + ": Error generating collider. ComputeHull() returned no hulls.");
             }
           }
           else {
             if(bVerbose) {
-              DebugConsole.LogWarning(gameObject.name + ": Error generating collider. ComputeHull() returned false.");
+              Debug.LogWarning(gameObject.name + ": Error generating collider. ComputeHull() returned false.");
             }
           }
         }
@@ -161,7 +161,7 @@ namespace UltimateFracturing {
     }
 
     static void Log(string message) {
-      DebugConsole.Log(message);
+      Debug.Log(message);
     }
   }
 }

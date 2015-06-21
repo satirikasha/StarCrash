@@ -607,7 +607,7 @@ namespace UltimateFracturing {
 
       if(IsFracturingCancelled() == false) {
         if(fracturedComponent.Verbose) {
-          DebugConsole.Log(string.Format("Computed {0} slices for {1} chunks (Average: {2}).", s_FracturingStats.nSplitCount, listMeshDataOut.Count, (float)s_FracturingStats.nSplitCount / (float)listMeshDataOut.Count));
+          Debug.Log(string.Format("Computed {0} slices for {1} chunks (Average: {2}).", s_FracturingStats.nSplitCount, listMeshDataOut.Count, (float)s_FracturingStats.nSplitCount / (float)listMeshDataOut.Count));
         }
 
         if(listMeshDataOut.Count > 0) {
@@ -1013,7 +1013,7 @@ namespace UltimateFracturing {
       }
 
       if(fracturedComponent.Verbose && fracturedComponent.ListFracturedChunks.Count > 0) {
-        DebugConsole.Log("Total collider triangles: " + nTotalFaces + ". Average = " + (nTotalFaces / fracturedComponent.ListFracturedChunks.Count));
+        Debug.Log("Total collider triangles: " + nTotalFaces + ". Average = " + (nTotalFaces / fracturedComponent.ListFracturedChunks.Count));
       }
     }
 

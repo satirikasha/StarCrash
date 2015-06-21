@@ -14,7 +14,7 @@
 
     void Awake() {
       if(_Current != null) {
-        DebugConsole.LogError("Only one enviroment item can exist in the scene");
+        Debug.LogError("Only one enviroment item can exist in the scene");
       }
       else {
         _Current = this;

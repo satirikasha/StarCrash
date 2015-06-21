@@ -677,7 +677,7 @@ public class FracturedObjectEditor: Editor {
           UltimateFracturing.Fracturer.FractureToChunks(fracturedComponent, bPositionOnSourceAndHideOriginal, out listGameObjects, Progress);
         }
         catch(System.Exception e) {
-          DebugConsole.LogError(string.Format("Exception computing chunks ({0}):\n{1}", e.Message, e.StackTrace));
+          Debug.LogError(string.Format("Exception computing chunks ({0}):\n{1}", e.Message, e.StackTrace));
           bError = true;
         }
 
@@ -687,7 +687,7 @@ public class FracturedObjectEditor: Editor {
 
         if(bError == false && m_bProgressCancelled == false) {
           if(fracturedComponent.Verbose) {
-            DebugConsole.Log("Compute time = " + (fEndTime - fStartTime) + "seconds");
+            Debug.Log("Compute time = " + (fEndTime - fStartTime) + "seconds");
           }
         }
 

@@ -96,7 +96,7 @@ public class CombinedMeshEditor : Editor
             }
             catch(System.Exception e)
             {
-              DebugConsole.LogError("Exception Type: " + e.GetType().ToString() + ". Message: " + e.Message.ToString() + ". Stack Trace: " + e.StackTrace.ToString());
+              Debug.LogError("Exception Type: " + e.GetType().ToString() + ". Message: " + e.Message.ToString() + ". Stack Trace: " + e.StackTrace.ToString());
             }
 
             EditorUtility.ClearProgressBar();

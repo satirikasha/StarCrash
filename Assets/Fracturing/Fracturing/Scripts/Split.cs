@@ -1833,7 +1833,7 @@ namespace UltimateFracturing
                 }
                 else
                 {
-                  if(fracturedComponent.Verbose) DebugConsole.LogWarning("Error resolving cap");
+                  if(fracturedComponent.Verbose) Debug.LogWarning("Error resolving cap");
                 }
             }
 

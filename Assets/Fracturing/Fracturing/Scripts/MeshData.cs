@@ -120,7 +120,7 @@ namespace UltimateFracturing
 
             if(planeSplit.Raycast(rayAB, out fRayCast) == false)
             {
-              DebugConsole.LogWarning("Raycast returned false");
+              Debug.LogWarning("Raycast returned false");
                 clippedVertexDataOut = new VertexData(clippedVertexDataOut.nVertexHash);
                 return false;
             };

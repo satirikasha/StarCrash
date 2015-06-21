@@ -292,7 +292,7 @@ public class FracturedObject: MonoBehaviour {
     foreach(FracturedChunk chunk in ListFracturedChunks) {
       if(chunk == null) {
 #if UNITY_EDITOR
-        DebugConsole.LogWarning("ResetChunks() call invalid: some chunks have already been deleted. Ignoring...");
+        Debug.LogWarning("ResetChunks() call invalid: some chunks have already been deleted. Ignoring...");
 #endif
         return false;
       }
