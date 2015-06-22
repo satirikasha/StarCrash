@@ -8,7 +8,7 @@
     // Use this for initialization
     void Start() {
       FPSCounter.Instantiate();
-      DebugConsole.Instantiate(500, 10);
+      DebugConsole.Instantiate(Screen.width / 3, 10);
     }
 
     // Update is called once per frame

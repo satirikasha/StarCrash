@@ -10,18 +10,16 @@ using UnityEngine.UI;
     public event Action OnPoinerDown;
     public event Action OnPoinerUp;
 
-    public Text Text;
-
     private int _CurrentPointerID;
 
     public void OnPointerDown(PointerEventData eventData) {
       _CurrentPointerID = eventData.pointerId;
-      Text.text = "Button down: " + _CurrentPointerID;
+      Debug.Log("Button down: " + _CurrentPointerID);
       OnPoinerDown();
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-      Text.text = "Button up: " + _CurrentPointerID;
+      Debug.Log("Button up: " + _CurrentPointerID);
       if(_CurrentPointerID == eventData.pointerId) {
         OnPoinerUp();
       }

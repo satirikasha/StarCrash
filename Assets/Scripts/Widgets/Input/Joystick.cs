@@ -10,8 +10,6 @@ using System.Collections;
 
     public event Action<Vector2> OnPositionChanged;
 
-    public Text Text;
-
     private float _MovementRange = 100;
     private Vector2 _StartPos;
     private float _MovementRangeSqr;
@@ -46,14 +44,14 @@ using System.Collections;
 
 
     public void OnPointerUp(PointerEventData data) {
-      Text.text = "Joystick up: " + _CurrentPointerID;
+      Debug.Log("Joystick up: " + _CurrentPointerID);
       this.transform.position = _StartPos;
       UpdateVirtualAxes(_StartPos);
     }
 
 
     public void OnPointerDown(PointerEventData data) {
-      Text.text = "Joystick down: " + _CurrentPointerID;
+      Debug.Log("Joystick down: " + _CurrentPointerID);
       this.transform.position = data.position;
       _CurrentPointerID = data.pointerId;
     }
